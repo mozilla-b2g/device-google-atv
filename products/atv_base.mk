@@ -33,7 +33,6 @@ PRODUCT_PACKAGES += \
     DefaultContainerService \
     UserDictionaryProvider \
     libaudiopreprocessing \
-    libfilterpack_imageproc \
     libgabi++ \
     libkeystore \
     libstagefright_soft_aacdec \
@@ -95,7 +94,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.media.avsync=true
 
-$(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
+#$(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
 $(call inherit-product-if-exists, external/svox/pico/lang/all_pico_languages.mk)
 $(call inherit-product-if-exists, frameworks/base/data/fonts/fonts.mk)
 $(call inherit-product-if-exists, external/google-fonts/dancing-script/fonts.mk)
@@ -108,3 +107,6 @@ $(call inherit-product-if-exists, external/naver-fonts/fonts.mk)
 $(call inherit-product-if-exists, frameworks/base/data/keyboards/keyboards.mk)
 $(call inherit-product-if-exists, frameworks/webview/chromium/chromium.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
+# for b2g
+$(call inherit-product, external/moztt/fonts.mk)
+$(call inherit-product, gonk-misc/b2g.mk)
